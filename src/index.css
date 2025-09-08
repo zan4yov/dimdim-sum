@@ -1,42 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* DimDim Sum Design System - Gen-Z focused F&B brand */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Warm & Appetizing */
+    --brand: 14 90% 53%;           /* Warm orange-red */
+    --brand-50: 14 100% 97%;       /* Very light brand tint */
+    --brand-100: 14 100% 94%;      /* Light brand tint */
+    --brand-200: 14 100% 87%;      /* Lighter brand */
+    --brand-300: 14 100% 80%;      /* Light brand */
+    --brand-400: 14 95% 67%;       /* Medium brand */
+    --brand-500: 14 90% 53%;       /* Base brand */
+    --brand-600: 14 85% 47%;       /* Darker brand */
+    --brand-700: 14 80% 40%;       /* Much darker brand */
+    --brand-800: 14 75% 33%;       /* Very dark brand */
+    --brand-900: 14 70% 27%;       /* Darkest brand */
 
+    /* Secondary - Cream/Ivory */
+    --secondary: 42 47% 95%;       /* Warm cream */
+    --secondary-50: 42 60% 98%;    /* Lightest cream */
+    --secondary-100: 42 55% 95%;   /* Light cream */
+    --secondary-200: 42 50% 90%;   /* Medium light cream */
+    --secondary-300: 42 45% 85%;   /* Medium cream */
+    --secondary-400: 42 40% 80%;   /* Darker cream */
+    --secondary-500: 42 35% 75%;   /* Base cream */
+    --secondary-600: 42 30% 70%;   /* Dark cream */
+
+    /* Accent - Dark Charcoal */
+    --accent: 220 13% 18%;         /* Dark charcoal */
+    --accent-50: 220 15% 95%;      /* Very light gray */
+    --accent-100: 220 14% 90%;     /* Light gray */
+    --accent-200: 220 13% 80%;     /* Medium light gray */
+    --accent-300: 220 13% 70%;     /* Medium gray */
+    --accent-400: 220 13% 60%;     /* Darker gray */
+    --accent-500: 220 13% 45%;     /* Base gray */
+    --accent-600: 220 13% 35%;     /* Dark gray */
+    --accent-700: 220 13% 25%;     /* Darker charcoal */
+    --accent-800: 220 13% 18%;     /* Base charcoal */
+    --accent-900: 220 13% 12%;     /* Darkest charcoal */
+
+    /* Semantic Colors */
+    --background: 42 60% 98%;
+    --foreground: 220 13% 18%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 220 13% 18%;
+    
+    --primary: 14 90% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 42 47% 95%;
+    --secondary-foreground: 220 13% 18%;
+    
+    --muted: 42 30% 92%;
+    --muted-foreground: 220 13% 45%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    --border: 42 30% 88%;
+    --input: 42 30% 88%;
+    --ring: 14 90% 53%;
+    
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(14 90% 53%), hsl(25 95% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(42 60% 98%), hsl(42 47% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(14 90% 53%), hsl(25 95% 58%), hsl(35 85% 62%));
+    
+    /* Shadows */
+    --shadow-brand: 0 10px 30px -10px hsl(14 90% 53% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(220 13% 18% / 0.1);
+    --shadow-lg: 0 10px 40px -10px hsl(220 13% 18% / 0.15);
+    
+    /* Radius */
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +148,198 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   }
+
+  /* Typography Scale */
+  .font-display {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .font-heading {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .font-body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-brand {
+    @apply bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-brand transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-accent-800 font-semibold px-6 py-3 rounded-xl border-2 border-border hover:border-brand-500 hover:text-brand-600 transition-all duration-300 hover:shadow-md;
+  }
+
+  .btn-whatsapp {
+    @apply bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2;
+  }
+
+  /* Card Components */
+  .card-menu {
+    @apply bg-card rounded-2xl shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden;
+  }
+
+  .card-testimonial {
+    @apply bg-card rounded-xl p-6 shadow-card hover:shadow-md transition-all duration-300 border border-border;
+  }
+
+  /* Badge Styles */
+  .badge-bestseller {
+    @apply bg-gradient-to-r from-brand-500 to-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full;
+  }
+
+  .badge-new {
+    @apply bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold px-3 py-1 rounded-full;
+  }
+
+  .badge-halal {
+    @apply bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gradients */
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Animations */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Star Rating */
+  .star-rating {
+    @apply flex items-center gap-1;
+  }
+
+  .star {
+    @apply w-4 h-4 text-yellow-400;
+  }
+
+  .star.filled {
+    @apply text-yellow-400;
+  }
+
+  .star.empty {
+    @apply text-gray-300;
+  }
+}
+
+@layer utilities {
+  /* Custom Utilities */
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-brand {
+    box-shadow: var(--shadow-brand);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-lg-custom {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-brand {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(14 90% 53% / 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsl(14 90% 53% / 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design Helpers */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.focus-brand:focus {
+  @apply outline-none ring-2 ring-brand-500 ring-offset-2;
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(90deg, 
+    hsl(var(--muted)) 25%, 
+    hsl(var(--muted) / 0.5) 50%, 
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }

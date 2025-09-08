@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Siomay Ayam",
+    "description": "Dim sum ayam kukus dengan tekstur lembut dan rasa gurih",
+    "price": 15000,
+    "image": "/src/assets/menu-siomay.jpg",
+    "category": "kukus",
+    "spiceLevel": "mild",
+    "badges": ["bestseller"],
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Siomay Udang",
+    "description": "Dim sum udang segar dengan rasa manis alami",
+    "price": 18000,
+    "image": "/src/assets/menu-siomay.jpg",
+    "category": "kukus",
+    "spiceLevel": "mild",
+    "badges": ["halal"],
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Dimsum Mentai Spesial",
+    "description": "Dim sum dengan saus mentai creamy dan gurih yang khas",
+    "price": 22000,
+    "image": "/src/assets/menu-mentai.jpg",
+    "category": "kukus",
+    "spiceLevel": "mentai",
+    "badges": ["new", "bestseller"],
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Hakao Udang",
+    "description": "Dim sum udang dengan kulit transparan yang kenyal",
+    "price": 20000,
+    "image": "/src/assets/menu-hakao.jpg",
+    "category": "kukus",
+    "spiceLevel": "mild",
+    "badges": ["halal"],
+    "available": true
+  },
+  {
+    "id": 5,
+    "name": "Dimsum Goreng Original",
+    "description": "Dim sum goreng crispy dengan isian ayam yang lezat",
+    "price": 16000,
+    "image": "/src/assets/menu-goreng.jpg",
+    "category": "goreng",
+    "spiceLevel": "mild",
+    "badges": ["bestseller"],
+    "available": true
+  },
+  {
+    "id": 6,
+    "name": "Dimsum Goreng Mentai",
+    "description": "Dim sum goreng dengan topping saus mentai yang creamy",
+    "price": 24000,
+    "image": "/src/assets/menu-goreng.jpg",
+    "category": "goreng",
+    "spiceLevel": "mentai",
+    "badges": ["new"],
+    "available": true
+  },
+  {
+    "id": 7,
+    "name": "Pangsit Goreng",
+    "description": "Pangsit goreng renyah dengan isian daging sapi pilihan",
+    "price": 14000,
+    "image": "/src/assets/menu-goreng.jpg",
+    "category": "goreng",
+    "spiceLevel": "mild",
+    "badges": ["halal"],
+    "available": true
+  },
+  {
+    "id": 8,
+    "name": "Lumpia Shanghai",
+    "description": "Lumpia goreng dengan isian udang dan sayuran segar",
+    "price": 17000,
+    "image": "/src/assets/menu-goreng.jpg",
+    "category": "goreng",
+    "spiceLevel": "mild",
+    "badges": ["bestseller"],
+    "available": true
+  },
+  {
+    "id": 9,
+    "name": "Shumai Ayam",
+    "description": "Dim sum kukus terbuka dengan isian ayam cincang",
+    "price": 15000,
+    "image": "/src/assets/menu-siomay.jpg",
+    "category": "kukus",
+    "spiceLevel": "mild",
+    "badges": ["halal"],
+    "available": true
+  },
+  {
+    "id": 10,
+    "name": "Bapao Isi Ayam",
+    "description": "Bakpao kukus empuk dengan isian ayam berbumbu",
+    "price": 12000,
+    "image": "/src/assets/menu-siomay.jpg",
+    "category": "kukus",
+    "spiceLevel": "mild",
+    "badges": [],
+    "available": true
+  }
+]

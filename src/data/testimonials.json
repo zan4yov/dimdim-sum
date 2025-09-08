@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Sari Wulandari",
+    "initials": "SW",
+    "rating": 5,
+    "text": "Dimsum mentainya enak banget! Sausnya creamy dan tidak terlalu pedas. Pasti order lagi!",
+    "date": "2024-01-15",
+    "source": "Instagram"
+  },
+  {
+    "id": 2,
+    "name": "Budi Santoso",
+    "initials": "BS",
+    "rating": 5,
+    "text": "Siomay ayamnya lembut dan bumbu meresap sempurna. Harga terjangkau untuk rasa premium!",
+    "date": "2024-01-10",
+    "source": "Tokopedia"
+  },
+  {
+    "id": 3,
+    "name": "Maya Putri",
+    "initials": "MP",
+    "rating": 4,
+    "text": "Hakao udangnya segar, kulit transparan yang kenyal. Delivery cepat dan packaging rapi.",
+    "date": "2024-01-08",
+    "source": "Instagram"
+  },
+  {
+    "id": 4,
+    "name": "Rizky Firmansyah",
+    "initials": "RF",
+    "rating": 5,
+    "text": "Dimsum gorengnya crispy di luar tapi lembut di dalam. Cocok buat cemilan sore!",
+    "date": "2024-01-05",
+    "source": "WhatsApp"
+  },
+  {
+    "id": 5,
+    "name": "Indah Permata",
+    "initials": "IP",
+    "rating": 5,
+    "text": "Pelayanan ramah, rasa autentik, dan harga bersahabat. Recommended banget untuk pecinta dimsum!",
+    "date": "2023-12-28",
+    "source": "Instagram"
+  },
+  {
+    "id": 6,
+    "name": "Ahmad Fauzi",
+    "initials": "AF",
+    "rating": 4,
+    "text": "Lumpia Shanghainya juara! Isian udangnya banyak dan segar. Next time mau coba yang mentai.",
+    "date": "2023-12-20",
+    "source": "Tokopedia"
+  }
+]
