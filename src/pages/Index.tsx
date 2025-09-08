@@ -88,7 +88,7 @@ const Index = () => {
                   <span className="block text-gradient-brand bg-white text-white">
                     Terlezat
                   </span>
-                  di Jakarta
+                  di Surabaya
                 </h1>
                 
                 {/* Subheading */}
