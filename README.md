@@ -163,3 +163,6 @@ Provide **full, runnable code** for every file listed in the tree, not snippets.
 ### Final Deliverable
 
 Return **one Markdown response** that includes: sections 1–13 in order, the **complete file tree**, and **full code for every file**. The code should be valid, runnable, and produce a **static build** ready for hosting without extra setup.
+
+## NOTE‼️‼️
+For mobile device don't forget to use desktop site mode
