@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import Layout from '@/components/Layout/Layout';
 import MenuCard from '@/components/UI/MenuCard';
 import MenuFilter from '@/components/UI/MenuFilter';
@@ -33,12 +34,11 @@ const Menu = () => {
 
       // Price range filter
       if (filters.priceRange !== 'all') {
-        const [min, max] = filters.priceRange.split('-').map(p => parseInt(p) || Infinity);
-        if (filters.priceRange.endsWith('+')) {
-          if (item.price < min) return false;
-        } else {
-          if (item.price < min || item.price > max) return false;
-        }
+        const [minRaw, maxRaw] = filters.priceRange.split('-');
+        const min = parseInt(minRaw);
+        const max = maxRaw?.endsWith('+') ? Infinity : parseInt(maxRaw);
+        if (Number.isFinite(min) && item.price < min) return false;
+        if (Number.isFinite(max) && item.price > (max as number)) return false;
       }
 
       return true;
@@ -74,58 +74,83 @@ const Menu = () => {
   };
 
   return (
-    <Layout 
+    <Layout
       title="Menu Lengkap - DimDim Sum"
       description="Jelajahi menu lengkap dim sum halal kami dengan berbagai varian kukus dan goreng yang lezat."
     >
-      {/* Hero Section */}
-      <section className="bg-gradient-brand text-white py-16">
+      {/* Hero Section (lebih rapat) */}
+      <motion.section
+        className="bg-gradient-brand py-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
         <div className="container-custom text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-2 text-black">
             Menu Lengkap
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-black/90 max-w-2xl mx-auto">
             Temukan berbagai varian dim sum halal dengan cita rasa autentik
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Menu Section */}
-      <section className="section-padding">
+      <section className="section-padding pt-6"> {/* kurangi jarak atas section */}
         <div className="container-custom">
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-4" // dari 8 jadi 4 agar lebih rapat
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
             {/* Filter */}
-            <MenuFilter 
-              onFilterChange={handleFilterChange}
-              onReset={handleReset}
-            />
+            <MenuFilter onFilterChange={handleFilterChange} onReset={handleReset} />
 
-            {/* Results Info */}
-            <div className="flex items-center justify-between">
+            {/* Results Info (lebih rapat) */}
+            <div className="flex items-center justify-between mt-1">
               <p className="text-muted-foreground">
                 Menampilkan {filteredAndSortedMenu.length} dari {menuData.length} menu
               </p>
             </div>
 
-            {/* Menu Grid */}
+            {/* Menu Grid dengan animasi ringan */}
             {filteredAndSortedMenu.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <motion.div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                initial="hidden"
+                animate="show"
+                variants={{
+                  hidden: { opacity: 1 },
+                  show: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.05, delayChildren: 0.1 }
+                  }
+                }}
+              >
                 {filteredAndSortedMenu.map((item) => (
-                  <MenuCard
+                  <motion.div
                     key={item.id}
-                    name={item.name}
-                    description={item.description}
-                    price={item.price}
-                    image={item.image}
-                    badges={item.badges}
-                    available={item.available}
-                  />
+                    variants={{
+                      hidden: { opacity: 0, y: 16 },
+                      show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }
+                    }}
+                  >
+                    <MenuCard
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                      image={item.image}
+                      badges={item.badges}
+                      available={item.available}
+                    />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             ) : (
-              <div className="text-center py-16">
+              <div className="text-center py-12"> {/* kurangi dari 16 ke 12 */}
                 <div className="max-w-md mx-auto">
-                  <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-4xl">🥟</span>
                   </div>
                   <h3 className="font-heading text-xl text-accent-800 mb-2">
@@ -134,16 +159,13 @@ const Menu = () => {
                   <p className="text-muted-foreground mb-4">
                     Coba ubah filter pencarian untuk menemukan menu yang Anda inginkan
                   </p>
-                  <button
-                    onClick={handleReset}
-                    className="btn-brand"
-                  >
+                  <button onClick={handleReset} className="btn-brand">
                     Reset Filter
                   </button>
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
       </section>
     </Layout>

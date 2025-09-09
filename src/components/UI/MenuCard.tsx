@@ -10,7 +10,14 @@ interface MenuCardProps {
   available: boolean;
 }
 
-const MenuCard = ({ name, description, price, image, badges, available }: MenuCardProps) => {
+const MenuCard = ({
+  name,
+  description,
+  price,
+  image,
+  badges = [],
+  available,
+}: MenuCardProps) => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('id-ID', {
       style: 'currency',
@@ -58,6 +65,15 @@ const MenuCard = ({ name, description, price, image, badges, available }: MenuCa
     }
   };
 
+  // ==== WhatsApp redirect ====
+  const number = '6281232255205'; // nomor WA bisnis kamu
+  const waMessage = `Halo DimDim Sum! Saya mau pesan ${name} (${formatPrice(
+    price
+  )}). Apakah tersedia hari ini?`;
+
+  const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(waMessage)}`;
+  // ===========================
+
   return (
     <div className="card-menu group">
       {/* Image Container */}
@@ -68,13 +84,13 @@ const MenuCard = ({ name, description, price, image, badges, available }: MenuCa
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
-        
+
         {/* Badges */}
         {badges.length > 0 && (
           <div className="absolute top-3 left-3 flex flex-wrap gap-2">
             {badges.map((badge) => (
-              <Badge 
-                key={badge} 
+              <Badge
+                key={badge}
                 variant={getBadgeVariant(badge)}
                 className={cn(getBadgeStyles(badge))}
               >
@@ -109,13 +125,21 @@ const MenuCard = ({ name, description, price, image, badges, available }: MenuCa
           <span className="font-bold text-xl text-brand-600">
             {formatPrice(price)}
           </span>
-          
-          <button
-            className="btn-brand text-sm px-4 py-2"
-            disabled={!available}
-          >
-            {available ? 'Pesan' : 'Habis'}
-          </button>
+
+          {available ? (
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-brand text-sm px-4 py-2"
+            >
+              Pesan
+            </a>
+          ) : (
+            <span className="btn-brand text-sm px-4 py-2 opacity-60 cursor-not-allowed select-none">
+              Habis
+            </span>
+          )}
         </div>
       </div>
     </div>

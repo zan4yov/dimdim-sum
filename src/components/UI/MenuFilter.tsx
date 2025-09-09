@@ -25,7 +25,7 @@ const MenuFilter = ({ onFilterChange, onReset }: MenuFilterProps) => {
   const categories = [
     { value: 'all', label: 'Semua Jenis' },
     { value: 'kukus', label: 'Kukus' },
-    { value: 'goreng', label: 'Goreng' }
+    { value: 'frozen', label: 'Frozen' }
   ];
 
   const spiceLevels = [

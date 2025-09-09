@@ -5,7 +5,7 @@ import TestimonialCard from '@/components/UI/TestimonialCard';
 import { Badge } from '@/components/ui/badge';
 import menuData from '@/data/menu.json';
 import testimoniData from '@/data/testimonials.json';
-import heroImage from '@/assets/hero-dimsum.jpg';
+import heroImage from '@/assets/1.jpeg';
 import { 
   Star, 
   Shield, 
@@ -34,8 +34,8 @@ const Index = () => {
   const usp = [
     {
       icon: Shield,
-      title: "100% Halal",
-      description: "Bersertifikat halal MUI dengan bahan-bahan terjamin"
+      title: "Unik & Kreatif",
+      description: "Menyajikan Dimsum dengan Inovasi yang Bikin Momen Lebih Berkesan"
     },
     {
       icon: ChefHat,
@@ -56,8 +56,8 @@ const Index = () => {
 
   return (
     <Layout 
-      title="DimDim Sum - Dim Sum Halal Terlezat Jakarta"
-      description="Nikmati dim sum halal terlezat di Jakarta dengan berbagai varian kukus dan goreng. Dibuat segar setiap hari dengan bahan pilihan berkualitas."
+      title="DimDim Sum - Dim Sum Mentai Terlezat Surabaya"
+      description="Nikmati dim sum Mentai terlezat di Surabaya dengan berbagai varian kukus dan goreng. Dibuat segar setiap hari dengan bahan pilihan berkualitas."
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-brand overflow-hidden">
@@ -65,7 +65,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <img 
             src={heroImage}
-            alt="DimDim Sum - Berbagai varian dim sum halal yang lezat"
+            alt="DimDim Sum - Berbagai varian dim sum mentai yang lezat"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-600/80 to-brand-500/60" />
@@ -79,12 +79,12 @@ const Index = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center space-x-2 bg-white/20 rounded-full px-4 py-2 backdrop-blur-sm">
                   <Shield className="w-4 h-4" />
-                  <span className="text-sm font-semibold">100% Halal & Segar</span>
+                  <span className="text-sm font-semibold">Dijamin PUAS</span>
                 </div>
                 
                 {/* Headline */}
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-                  Dim Sum Halal
+                  Dim Sum Mentai
                   <span className="block text-gradient-brand bg-white text-white">
                     Terlezat
                   </span>
@@ -230,7 +230,7 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <a href="/menu" className="btn-brand">
+            <a href="/menu" className="btn-brand inline-flex items-center justify-center">
               Lihat Semua Menu
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
@@ -278,7 +278,7 @@ const Index = () => {
             </div>
 
             <div className="text-center mt-12">
-              <a href="/testimoni" className="btn-ghost">
+              <a href="/testimoni" className="btn-ghost inline-flex items-center justify-center">
                 Lihat Semua Testimoni
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
@@ -288,15 +288,16 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-brand text-white">
-        <div className="container-custom text-center">
-          <h2 className="font-display text-3xl md:text-4xl mb-4">
-            Siap Merasakan Kelezatannya?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Jangan tunggu lagi! Pesan sekarang dan nikmati dim sum halal terlezat 
-            dengan pengiriman cepat ke seluruh Jakarta.
-          </p>
+      <section className="section-padding bg-gradient-brand">
+  <div className="container-custom text-center">
+    <h2 className="font-display text-3xl md:text-4xl mb-4 text-black">
+      Siap Merasakan Kelezatannya?
+    </h2>
+    <p className="text-xl mb-8 max-w-2xl mx-auto text-black">
+      Jangan tunggu lagi! Pesan sekarang dan nikmati dimsum mentai terlezat 
+      dengan pengiriman cepat ke seluruh Surabaya.
+    </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://wa.me/6281234567890?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan%20sekarang"
@@ -308,12 +309,17 @@ const Index = () => {
               Pesan via WhatsApp
             </a>
             <a
-              href="tel:+6281234567890"
-              className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center"
-            >
-              <Phone className="w-5 h-5" />
-              Hubungi Langsung
-            </a>
+  href="tel:+6281232255205"
+  className="inline-flex items-center justify-center gap-2 rounded-full 
+             px-6 py-3 font-semibold bg-white text-black 
+             border border-gray-300 shadow-sm 
+             transition-all duration-200 
+             hover:bg-orange-500 hover:text-white hover:scale-105 active:scale-95"
+>
+  <Phone className="w-5 h-5" />
+  Hubungi Langsung
+</a>
+
           </div>
         </div>
       </section>

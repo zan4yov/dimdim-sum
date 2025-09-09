@@ -1,5 +1,7 @@
 import { Instagram, MessageCircle, Clock, MapPin, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '@/assets/logo.png'; 
+
 
 const Footer = () => {
   return (
@@ -9,9 +11,15 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-brand rounded-lg flex items-center justify-center">
-                <span className="font-display text-white font-bold text-lg">DD</span>
-              </div>
+              <div className="w-10 h-10 flex items-center justify-center">
+  <img
+    src={logo}
+    alt="Logo DimDim Sum"
+    className="w-10 h-10 object-contain rounded-lg"
+    loading="lazy"
+  />
+</div>
+
               <span className="font-display text-xl">DimDim Sum</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -28,7 +36,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6281232255205?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan%20sekarang"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/10 rounded-lg hover:bg-green-600 transition-colors"
@@ -71,17 +79,17 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300 text-sm">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-brand-400" />
-                <span>+62 812-3456-7890</span>
+                <span>+62 812-322-552-05</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-brand-400" />
-                <span>hello@dimdimsumid.com</span>
+                <span>djumbodimsum@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-brand-400 mt-0.5" />
                 <span>
-                  Jl. Raya Kelapa Gading No. 123<br />
-                  Jakarta Utara, 14240
+                  Medayu Utara XII No 11A<br />
+                  Surabaya, 60293
                 </span>
               </div>
             </div>

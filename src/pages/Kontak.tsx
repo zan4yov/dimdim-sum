@@ -2,7 +2,7 @@ import Layout from '@/components/Layout/Layout';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram } from 'lucide-react';
 
 const Kontak = () => {
-  const whatsappNumber = "6281234567890";
+  const whatsappNumber = "082231268757";
   const email = "hello@dimdimsumid.com";
   const address = "Jl. Raya Kelapa Gading No. 123, Jakarta Utara, 14240";
   
@@ -14,16 +14,16 @@ const Kontak = () => {
       description="Hubungi DimDim Sum untuk pemesanan atau informasi lebih lanjut. Temukan lokasi dan jam operasional kami."
     >
       {/* Hero Section */}
-      <section className="bg-gradient-brand text-white py-16">
-        <div className="container-custom text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4">
-            Kontak & Lokasi
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-            Hubungi kami untuk pemesanan atau kunjungi langsung toko kami
-          </p>
-        </div>
-      </section>
+      <section className="bg-gradient-brand py-16">
+  <div className="container-custom text-center">
+    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 text-black">
+      Kontak & Lokasi
+    </h1>
+    <p className="text-xl md:text-2xl text-black max-w-2xl mx-auto">
+      Hubungi kami untuk pemesanan atau kunjungi langsung toko kami
+    </p>
+  </div>
+</section>
 
       {/* Contact Methods */}
       <section className="section-padding">
@@ -44,7 +44,7 @@ const Kontak = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* WhatsApp */}
                 <a
-                  href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                  href={`https://wa.me/6281232255205?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan%20sekarang`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-6 bg-card rounded-xl shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border"
@@ -54,7 +54,7 @@ const Kontak = () => {
                   </div>
                   <h3 className="font-heading text-lg text-accent-800 mb-2">WhatsApp</h3>
                   <p className="text-muted-foreground mb-3">Pesan langsung via WhatsApp</p>
-                  <p className="font-semibold text-brand-600">+62 812-3456-7890</p>
+                  <p className="font-semibold text-brand-600">+62 812-322-552-05 </p>
                 </a>
 
                 {/* Phone */}
@@ -67,7 +67,7 @@ const Kontak = () => {
                   </div>
                   <h3 className="font-heading text-lg text-accent-800 mb-2">Telepon</h3>
                   <p className="text-muted-foreground mb-3">Hubungi langsung via telepon</p>
-                  <p className="font-semibold text-brand-600">+62 812-3456-7890</p>
+                  <p className="font-semibold text-brand-600">+62 822-312-687-57</p>
                 </a>
 
                 {/* Email */}
@@ -80,7 +80,7 @@ const Kontak = () => {
                   </div>
                   <h3 className="font-heading text-lg text-accent-800 mb-2">Email</h3>
                   <p className="text-muted-foreground mb-3">Kirim pertanyaan via email</p>
-                  <p className="font-semibold text-brand-600">{email}</p>
+                  <p className="font-semibold text-brand-600">djumbodimsum@gmail.com</p>
                 </a>
 
                 {/* Instagram */}
@@ -117,7 +117,7 @@ const Kontak = () => {
                   <div>
                     <h3 className="font-heading text-lg text-accent-800 mb-2">Alamat Toko</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      {address}
+                      Medayu Utara XII No 11A
                     </p>
                     <p className="text-sm text-muted-foreground mt-2">
                       Dekat dengan Mall Kelapa Gading dan stasiun MRT
@@ -153,21 +153,35 @@ const Kontak = () => {
               </div>
 
               {/* Quick Order CTA */}
-              <div className="p-6 bg-gradient-brand rounded-xl text-white">
-                <h3 className="font-heading text-xl mb-3">Pesan Sekarang Juga!</h3>
-                <p className="text-white/90 mb-4">
-                  Tidak perlu antri, pesan langsung via WhatsApp dan ambil di toko
-                </p>
-                <a
-                  href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp bg-white/20 hover:bg-white/30 border-white/20"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  Pesan via WhatsApp
-                </a>
-              </div>
+              {/* Quick Order CTA (updated) */}
+<div className="p-6 bg-gradient-brand rounded-xl">
+  <h3 className="font-heading text-xl mb-3 text-black">
+    Pesan Sekarang Juga!
+  </h3>
+  <p className="mb-4 text-black/80">
+    Tidak perlu antri, pesan langsung via WhatsApp dan ambil di toko
+  </p>
+
+  <a
+    href={`https://wa.me/6281232255205?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pesan via WhatsApp"
+    className="
+      group p-6 
+      bg-card rounded-xl shadow-card border border-border
+      flex items-center justify-center gap-3
+      font-semibold text-black
+      transition-all duration-300
+      hover:shadow-lg hover:-translate-y-1
+      active:scale-95
+    "
+    style={{ backgroundColor: '#A7E399' }} // hijau lembut
+  >
+    <MessageCircle className="w-6 h-6 text-black group-hover:scale-110 transition-transform" />
+    Pesan via WhatsApp
+  </a>
+</div>
             </div>
           </div>
         </div>
@@ -187,7 +201,7 @@ const Kontak = () => {
             </div>
             <div className="aspect-video">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666!2d106.900587!3d-6.158086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e7a5b8!2sKelapa%20Gading%2C%20North%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1635123456789!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.33104933211877!2d112.7999586!3d-7.320521200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa99c01f9a9f%3A0xf419f79431d6c5d6!2sCV.%20Usaha%20Mandiri!5e0!3m2!1sen!2sid!4v1757383417196!5m2!1sen!2sid"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}

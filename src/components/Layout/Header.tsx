@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,9 +22,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-brand rounded-lg flex items-center justify-center">
-              <span className="font-display text-white font-bold text-lg">DD</span>
-            </div>
+            <div className="w-10 h-10 flex items-center justify-center">
+  <img
+    src={logo}
+    alt="Logo DimDim Sum"
+    className="w-10 h-10 object-contain rounded-lg"
+    loading="lazy"
+  />
+</div>
             <span className="font-display text-xl text-accent-800">DimDim Sum</span>
           </Link>
 
@@ -47,7 +53,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://wa.me/6281234567890?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan"
+              href="https://wa.me/6281232255205?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"
@@ -85,7 +91,7 @@ const Header = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/6281234567890?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan"
+                href="https://wa.me/6281232255205?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp justify-center mt-4"
