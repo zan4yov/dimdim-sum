@@ -4,7 +4,7 @@
     "name": "Dimsum Mentai Isi 6",
     "description": "Dimsum dengan topping keju dan nori, creamy gurih dengan sentuhan mentai.",
     "price": 20000,
-    "image": "/src/assets/DIMSUM-MENTAI-6.jpeg",
+    "image": "/images/DIMSUM-MENTAI-6.jpeg",
     "category": "kukus",
     "spiceLevel": "mentai",
     "badges": ["bestseller"],
