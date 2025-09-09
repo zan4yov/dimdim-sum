@@ -160,9 +160,9 @@ const Index = () => {
                     <div className="text-6xl">🥟</div>
                     <h3 className="text-xl font-heading">Menu Terpopuler</h3>
                     <div className="space-y-2 text-sm text-white/90">
-                      <div>✨ Dimsum Mentai Spesial</div>
-                      <div>🔥 Siomay Ayam Terlaris</div>
-                      <div>🥢 Hakao Udang Premium</div>
+                      <div>✨ Mini Cake Dimsum Isi 16</div>
+                      <div>🔥 Dimsum Mix Isi 16</div>
+                      <div>🥢 Dimsum Mentai Isi 16</div>
                     </div>
                   </div>
                 </div>
