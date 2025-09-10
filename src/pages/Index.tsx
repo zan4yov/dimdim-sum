@@ -124,7 +124,7 @@ const Index = () => {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan%20menu%20favorit"
+                  href="https://wa.me/6281232255205?text=Halo%20DimDim%20Sum!%20Saya%20ingin%20pesan%20menu%20favorit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp bg-green-500 hover:bg-green-600 justify-center sm:justify-start"
