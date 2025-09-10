@@ -237,13 +237,12 @@ const Index = () => {
               />
             ))}
           </div>
-          <Link
-  to="/menu"
-  className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
->
-  Lihat Menu
-  <ArrowRight className="w-4 h-4 ml-2" />
-</Link>
+         <div className="text-center">
+  <Link to="/menu" className="btn-brand inline-flex items-center justify-center">
+    Lihat Semua Menu
+    <ArrowRight className="w-4 h-4 ml-2" />
+  </Link>
+</div>
 
          
         </div>
