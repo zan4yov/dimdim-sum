@@ -288,11 +288,14 @@ const Index = () => {
             </div>
 
             <div className="text-center mt-12">
-              <a href="/testimoni" className="btn-ghost inline-flex items-center justify-center">
-                Lihat Semua Testimoni
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+  <Link 
+    to="/testimoni" 
+    className="btn-ghost inline-flex items-center justify-center"
+  >
+    Lihat Semua Testimoni
+    <ArrowRight className="w-4 h-4 ml-2" />
+  </Link>
+</div>
           </div>
         </div>
       </section>
