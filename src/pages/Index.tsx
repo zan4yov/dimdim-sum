@@ -231,12 +231,7 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center">
-            <a href="/menu" className="btn-brand inline-flex items-center justify-center">
-              Lihat Semua Menu
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </a>
-          </div>
+         
         </div>
       </section>
 
