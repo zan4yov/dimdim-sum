@@ -15,6 +15,7 @@ import {
   Phone,
   MessageCircle,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -132,14 +133,13 @@ const Index = () => {
                   <MessageCircle className="w-5 h-5" />
                   Pesan Sekarang
                 </a>
-                <a
-                  href="/menu"
-                  className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
-                >
-                  Lihat Menu
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </div>
+                <Link
+  href="/menu"
+  className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
+>
+  Lihat Menu
+  <ArrowRight className="w-4 h-4 ml-2" />
+</Link>
 
               {/* Social Proof (hapus rating & pengalaman, pakai count-up) */}
               <div className="flex items-center space-x-8 pt-4">
