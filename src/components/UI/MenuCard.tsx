@@ -5,7 +5,7 @@ interface MenuCardProps {
   name: string;
   description: string;
   price: number;
-  image: string;
+  image: string; // dari Menu.tsx: getImageUrl(item.image)
   badges: string[];
   available: boolean;
 }
@@ -66,23 +66,34 @@ const MenuCard = ({
   };
 
   // ==== WhatsApp redirect ====
-  const number = '6281232255205'; // nomor WA bisnis kamu
-  const waMessage = `Halo DimDim Sum! Saya mau pesan ${name} (${formatPrice(
-    price
-  )}). Apakah tersedia hari ini?`;
-
+  const number = '6281232255205';
+  const waMessage = `Halo DimDim Sum! Saya mau pesan ${name} (${formatPrice(price)}). Apakah tersedia hari ini?`;
   const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(waMessage)}`;
   // ===========================
+
+  // ==== Image fallback helper ====
+  const placeholder = '/placeholder-menu.png';
+  const safeSrc = image || placeholder;
+  const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    if (img.src.endsWith(placeholder)) return; // sudah fallback
+    img.src = placeholder;
+    img.onerror = null; // cegah loop
+  };
+  // ==============================
 
   return (
     <div className="card-menu group">
       {/* Image Container */}
       <div className="relative overflow-hidden aspect-square">
         <img
-          src={image}
+          src={safeSrc}
           alt={name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
+          decoding="async"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          onError={handleImgError}
         />
 
         {/* Badges */}
@@ -132,6 +143,7 @@ const MenuCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="btn-brand text-sm px-4 py-2"
+              aria-label={`Pesan ${name} via WhatsApp`}
             >
               Pesan
             </a>
