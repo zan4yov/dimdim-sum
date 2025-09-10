@@ -12,6 +12,20 @@ interface FilterOptions {
   sortBy: string;
 }
 
+// Map semua gambar di src/assets ke URL final (Vite-only)
+const imageModules = import.meta.glob('@/assets/**/*.{png,jpg,jpeg,webp,svg}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+const getImageUrl = (jsonPath: string): string => {
+  if (!jsonPath) return '/placeholder-menu.png';
+  // jsonPath contoh: "/src/assets/DIMSUM-MENTAI-6.jpeg"
+  const basename = jsonPath.split('/').pop()!; // "DIMSUM-MENTAI-6.jpeg"
+  const found = Object.entries(imageModules).find(([key]) => key.endsWith(basename));
+  return found?.[1] ?? '/placeholder-menu.png';
+};
+
 const Menu = () => {
   const [filters, setFilters] = useState<FilterOptions>({
     category: 'all',
@@ -96,7 +110,7 @@ const Menu = () => {
       </motion.section>
 
       {/* Menu Section */}
-      <section className="section-padding pt-6"> {/* kurangi jarak atas section */}
+      <section className="section-padding pt-6">{/* kurangi jarak atas section */}
         <div className="container-custom">
           <motion.div
             className="space-y-4" // dari 8 jadi 4 agar lebih rapat
@@ -140,7 +154,7 @@ const Menu = () => {
                       name={item.name}
                       description={item.description}
                       price={item.price}
-                      image={item.image}
+                      image={getImageUrl(item.image)}  {/* <- penting */}
                       badges={item.badges}
                       available={item.available}
                     />
@@ -148,7 +162,7 @@ const Menu = () => {
                 ))}
               </motion.div>
             ) : (
-              <div className="text-center py-12"> {/* kurangi dari 16 ke 12 */}
+              <div className="text-center py-12">{/* kurangi dari 16 ke 12 */}
                 <div className="max-w-md mx-auto">
                   <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-4xl">🥟</span>
