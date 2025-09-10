@@ -133,6 +133,13 @@ const Index = () => {
                   <MessageCircle className="w-5 h-5" />
                   Pesan Sekarang
                 </a>
+                <Link
+  to="/menu"
+  className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
+>
+  Lihat Menu
+  <ArrowRight className="w-4 h-4 ml-2" />
+</Link>
                 
               </div>
 
@@ -230,6 +237,13 @@ const Index = () => {
               />
             ))}
           </div>
+          <Link
+  to="/menu"
+  className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
+>
+  Lihat Menu
+  <ArrowRight className="w-4 h-4 ml-2" />
+</Link>
 
          
         </div>
