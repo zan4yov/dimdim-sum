@@ -16,7 +16,6 @@ import {
   MessageCircle,
 } from 'lucide-react';
 
-
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [count, setCount] = useState(0);
@@ -134,13 +133,13 @@ const Index = () => {
                   Pesan Sekarang
                 </a>
                 <a
-                    href="/menu"
-                      className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
+                  href="/Menu"
+                  className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
                 >
-                          Lihat Menu
-                <ArrowRight className="w-4 h-4 ml-2" />
+                  Lihat Menu
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
-
+              </div>
 
               {/* Social Proof (hapus rating & pengalaman, pakai count-up) */}
               <div className="flex items-center space-x-8 pt-4">
@@ -161,9 +160,9 @@ const Index = () => {
                     <div className="text-6xl">🥟</div>
                     <h3 className="text-xl font-heading">Menu Terpopuler</h3>
                     <div className="space-y-2 text-sm text-white/90">
-                      <div>✨ Mini Cake Dimsum Isi 16</div>
-                      <div>🔥 Dimsum Mix Isi 16</div>
-                      <div>🥢 Dimsum Mentai Isi 16</div>
+                      <div>✨ Dimsum Mentai Spesial</div>
+                      <div>🔥 Siomay Ayam Terlaris</div>
+                      <div>🥢 Hakao Udang Premium</div>
                     </div>
                   </div>
                 </div>
