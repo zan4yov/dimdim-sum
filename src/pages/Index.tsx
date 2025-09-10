@@ -133,7 +133,7 @@ const Index = () => {
                   Pesan Sekarang
                 </a>
                 <a
-                  href="/Menu"
+                  href="/Menu.tsx"
                   className="btn-ghost text-white border-white/50 hover:bg-white/10 justify-center sm:justify-start"
                 >
                   Lihat Menu
