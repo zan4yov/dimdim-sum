@@ -164,5 +164,11 @@ Provide **full, runnable code** for every file listed in the tree, not snippets.
 
 Return **one Markdown response** that includes: sections 1–13 in order, the **complete file tree**, and **full code for every file**. The code should be valid, runnable, and produce a **static build** ready for hosting without extra setup.
 
-## NOTE‼️‼️
-For mobile device don't forget to use desktop site mode
+## NOTE
+This prompt contains several crusial point to increase the AI accuracy for building the website.
+1. Clarity→to prevent misdirection of the model.
+2. Context→to make the answer more relevant and specific.
+3. Examples (precision)→to help the model understand the desired format and details.
+4. Role play→used when a specific style/tone is needed (e.g., teacher, expert, astronaut, etc.)
+Furthermore, using my understanding of web programming, I was able to revise the code, add new features, and optimize the AI's output to suit my needs.
+With an understanding of a scientific discipline and the help of AI, we can maximize the projects we create.
