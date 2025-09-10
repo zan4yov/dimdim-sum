@@ -170,5 +170,6 @@ This prompt contains several crusial point to increase the AI accuracy for build
 2. Context→to make the answer more relevant and specific.
 3. Examples (precision)→to help the model understand the desired format and details.
 4. Role play→used when a specific style/tone is needed (e.g., teacher, expert, astronaut, etc.)
+
 Furthermore, using my understanding of web programming, I was able to revise the code, add new features, and optimize the AI's output to suit my needs.
 With an understanding of a scientific discipline and the help of AI, we can maximize the projects we create.
