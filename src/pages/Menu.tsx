@@ -3,7 +3,19 @@ import { motion } from 'framer-motion';
 import Layout from '@/components/Layout/Layout';
 import MenuCard from '@/components/UI/MenuCard';
 import MenuFilter from '@/components/UI/MenuFilter';
-import menuData from '@/data/menu.json';
+import { menuData } from '@/data/menuData';
+
+interface MenuItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  spiceLevel: string;
+  badges: string[];
+  available: boolean;
+}
 
 interface FilterOptions {
   category: string;
@@ -17,20 +29,16 @@ const Menu = () => {
     category: 'all',
     spiceLevel: 'all',
     priceRange: 'all',
-    sortBy: 'name'
+    sortBy: 'name',
   });
 
   const filteredAndSortedMenu = useMemo(() => {
-    let filtered = menuData.filter(item => {
+    const filtered = menuData.filter((item) => {
       // Category filter
-      if (filters.category !== 'all' && item.category !== filters.category) {
-        return false;
-      }
+      if (filters.category !== 'all' && item.category !== filters.category) return false;
 
       // Spice level filter
-      if (filters.spiceLevel !== 'all' && item.spiceLevel !== filters.spiceLevel) {
-        return false;
-      }
+      if (filters.spiceLevel !== 'all' && item.spiceLevel !== filters.spiceLevel) return false;
 
       // Price range filter
       if (filters.priceRange !== 'all') {
@@ -60,16 +68,14 @@ const Menu = () => {
     return filtered;
   }, [filters]);
 
-  const handleFilterChange = (newFilters: FilterOptions) => {
-    setFilters(newFilters);
-  };
+  const handleFilterChange = (newFilters: FilterOptions) => setFilters(newFilters);
 
   const handleReset = () => {
     setFilters({
       category: 'all',
       spiceLevel: 'all',
       priceRange: 'all',
-      sortBy: 'name'
+      sortBy: 'name',
     });
   };
 
@@ -78,7 +84,7 @@ const Menu = () => {
       title="Menu Lengkap - DimDim Sum"
       description="Jelajahi menu lengkap dim sum halal kami dengan berbagai varian kukus dan goreng yang lezat."
     >
-      {/* Hero Section (lebih rapat) */}
+      {/* Hero Section */}
       <motion.section
         className="bg-gradient-brand py-12"
         initial={{ opacity: 0, y: 20 }}
@@ -96,10 +102,10 @@ const Menu = () => {
       </motion.section>
 
       {/* Menu Section */}
-      <section className="section-padding pt-6"> {/* kurangi jarak atas section */}
+      <section className="section-padding pt-6">
         <div className="container-custom">
           <motion.div
-            className="space-y-4" // dari 8 jadi 4 agar lebih rapat
+            className="space-y-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -107,14 +113,14 @@ const Menu = () => {
             {/* Filter */}
             <MenuFilter onFilterChange={handleFilterChange} onReset={handleReset} />
 
-            {/* Results Info (lebih rapat) */}
+            {/* Info */}
             <div className="flex items-center justify-between mt-1">
               <p className="text-muted-foreground">
                 Menampilkan {filteredAndSortedMenu.length} dari {menuData.length} menu
               </p>
             </div>
 
-            {/* Menu Grid dengan animasi ringan */}
+            {/* Menu Grid */}
             {filteredAndSortedMenu.length > 0 ? (
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
@@ -124,8 +130,8 @@ const Menu = () => {
                   hidden: { opacity: 1 },
                   show: {
                     opacity: 1,
-                    transition: { staggerChildren: 0.05, delayChildren: 0.1 }
-                  }
+                    transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+                  },
                 }}
               >
                 {filteredAndSortedMenu.map((item) => (
@@ -133,7 +139,7 @@ const Menu = () => {
                     key={item.id}
                     variants={{
                       hidden: { opacity: 0, y: 16 },
-                      show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }
+                      show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
                     }}
                   >
                     <MenuCard
@@ -148,7 +154,7 @@ const Menu = () => {
                 ))}
               </motion.div>
             ) : (
-              <div className="text-center py-12"> {/* kurangi dari 16 ke 12 */}
+              <div className="text-center py-12">
                 <div className="max-w-md mx-auto">
                   <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-4xl">🥟</span>
