@@ -10,7 +10,7 @@ import dimsumPepperoni from "../src/assets/DIMSUM-MOZA.jpeg";
 import menuSiomay from "../src/assets/menu-siomay.jpg";
 import dimsumCake6 from "../src/assets/DIMSUM-CAKE-6.jpeg";
 
-export const menuData = [
+[
   {
     id: 1,
     name: "Dimsum Mentai Isi 6",
