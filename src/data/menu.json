@@ -1,14 +1,14 @@
-import dimsumMentai6 from "@/assets/DIMSUM-MENTAI-6.jpeg";
-import dimsumMentai10 from "@/assets/DIMSUM-MENTAI-10.jpeg";
-import menuMentai from "@/assets/menu-mentai.jpg";
-import dimsumMix from "@/assets/DIMSUM-MIX.jpeg";
-import dimsumOri from "@/assets/DIMSUM-ORI.jpeg";
-import dimsumFrozen from "@/assets/DIMSUM-FROZEN.jpeg";
-import dimsumMiniCake16 from "@/assets/DIMSUM-MINI-CAKE-ISI-16.jpeg";
-import dimsumMoza from "@/assets/DIMSUM-MOZA-1.jpeg";
-import dimsumPepperoni from "@/assets/DIMSUM-MOZA.jpeg";
-import menuSiomay from "@/assets/menu-siomay.jpg";
-import dimsumCake6 from "@/assets/DIMSUM-CAKE-6.jpeg";
+import dimsumMentai6 from "../src/assets/DIMSUM-MENTAI-6.jpeg";
+import dimsumMentai10 from "../src/assets/DIMSUM-MENTAI-10.jpeg";
+import menuMentai from "../src/assets/menu-mentai.jpg";
+import dimsumMix from "../src/assets/DIMSUM-MIX.jpeg";
+import dimsumOri from "../src/assets/DIMSUM-ORI.jpeg";
+import dimsumFrozen from "../src/assets/DIMSUM-FROZEN.jpeg";
+import dimsumMiniCake16 from "../src/assets/DIMSUM-MINI-CAKE-ISI-16.jpeg";
+import dimsumMoza from "../src/assets/DIMSUM-MOZA-1.jpeg";
+import dimsumPepperoni from "../src/assets/DIMSUM-MOZA.jpeg";
+import menuSiomay from "../src/assets/menu-siomay.jpg";
+import dimsumCake6 from "../src/assets/DIMSUM-CAKE-6.jpeg";
 
 export const menuData = [
   {
